@@ -344,8 +344,13 @@ It was also good practice for understanding how real collaborative applications 
 # Screenshots
 
 
-<img width="1532" height="777" alt="image" src="https://github.com/user-attachments/assets/b8e361bc-85bd-41af-9a16-13fe23b9d1a9" />
-<img width="1531" height="795" alt="image" src="https://github.com/user-attachments/assets/a46ca8b4-250c-48e4-99e9-a97190933bc4" />
+<img width="1532" height="783" alt="image" src="https://github.com/user-attachments/assets/247c4ed4-8c3d-4ee7-b241-622d6bc5bf39" />
+<img width="1535" height="665" alt="image" src="https://github.com/user-attachments/assets/d32a77aa-25b1-4d8a-b118-56ed3749bc60" />
+<img width="1242" height="657" alt="image" src="https://github.com/user-attachments/assets/abbf52d5-ae06-454b-9600-5f81aeb3b1b5" />
+<img width="1236" height="741" alt="image" src="https://github.com/user-attachments/assets/b61f6bb3-5ad5-44e3-ba86-d8acb0f80f5a" />
+
+
+
 
 
 
