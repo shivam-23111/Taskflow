@@ -32,14 +32,14 @@ const Modal = ({ isOpen, onClose, title, children, size = 'md' }) => {
 
       {/* Modal */}
       <div
-        className={`relative ${sizes[size]} w-full bg-dark-800 border border-dark-700 rounded-2xl shadow-2xl transform transition-all animate-in fade-in zoom-in duration-200`}
+        className={`relative ${sizes[size]} w-full bg-dark-900 border border-dark-700 rounded-lg shadow-2xl transform transition-all animate-in fade-in zoom-in duration-200`}
       >
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-dark-700">
+        <div className="flex items-center justify-between p-6 border-b border-dark-800">
           <h2 className="text-xl font-semibold text-dark-50">{title}</h2>
           <button
             onClick={onClose}
-            className="p-2 text-dark-400 hover:text-dark-200 hover:bg-dark-700 rounded-lg transition-colors"
+            className="p-2 text-dark-400 hover:text-dark-200 hover:bg-dark-800 rounded-lg transition-colors"
           >
             <IoClose size={20} />
           </button>

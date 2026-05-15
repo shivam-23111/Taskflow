@@ -1,36 +1,76 @@
 import { Outlet } from 'react-router-dom';
 import { HiOutlineSparkles } from 'react-icons/hi2';
+import heroImage from '../assets/hero.png';
 
 const AuthLayout = () => {
   return (
-    <div className="min-h-screen bg-dark-950 flex items-center justify-center p-4 relative overflow-hidden">
-      {/* Animated background gradients */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-primary-600/20 to-transparent rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-tl from-primary-800/15 to-transparent rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-primary-500/10 rounded-full blur-2xl animate-bounce delay-500" style={{ animationDuration: '6s' }}></div>
-      </div>
+    <div className="min-h-screen bg-dark-950 px-4 py-6 text-dark-100 sm:px-6 lg:px-8">
+      <div className="mx-auto grid min-h-[calc(100vh-3rem)] w-full max-w-6xl overflow-hidden rounded-lg border border-dark-800 bg-dark-900 shadow-2xl shadow-black/30 lg:grid-cols-[1.08fr_0.92fr]">
+        <section className="hidden border-r border-dark-800 bg-dark-950 lg:block">
+          <div className="flex h-full flex-col justify-between p-8">
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-primary-400/30 bg-primary-500/15">
+                <HiOutlineSparkles className="text-xl text-primary-200" />
+              </div>
+              <div>
+                <p className="text-lg font-bold leading-tight text-dark-50">TaskFlow</p>
+                <p className="text-xs font-semibold uppercase text-primary-300">Delivery OS</p>
+              </div>
+            </div>
 
-      <div className="w-full max-w-md relative z-10">
-        {/* Logo */}
-        <div className="flex items-center justify-center gap-3 mb-8">
-          <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/25">
-            <HiOutlineSparkles className="text-white text-xl" />
+            <div className="space-y-6">
+              <div>
+                <p className="text-sm font-semibold uppercase text-amber-300">
+                  Plan. Assign. Ship.
+                </p>
+                <h1 className="mt-3 max-w-xl text-4xl font-bold leading-tight text-dark-50">
+                  Keep project work visible without losing the human rhythm.
+                </h1>
+              </div>
+              <div className="overflow-hidden rounded-lg border border-dark-800 bg-dark-900">
+                <img
+                  src={heroImage}
+                  alt="TaskFlow workspace preview"
+                  className="h-72 w-full object-cover"
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-3 gap-3 text-sm">
+              <div className="rounded-md border border-dark-800 bg-dark-900 p-3">
+                <p className="font-semibold text-dark-50">Projects</p>
+                <p className="mt-1 text-xs text-dark-500">Deadline led</p>
+              </div>
+              <div className="rounded-md border border-dark-800 bg-dark-900 p-3">
+                <p className="font-semibold text-dark-50">Tasks</p>
+                <p className="mt-1 text-xs text-dark-500">Priority aware</p>
+              </div>
+              <div className="rounded-md border border-dark-800 bg-dark-900 p-3">
+                <p className="font-semibold text-dark-50">Teams</p>
+                <p className="mt-1 text-xs text-dark-500">Role based</p>
+              </div>
+            </div>
           </div>
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-primary-400 to-primary-200 bg-clip-text text-transparent">
-            TaskFlow
-          </h1>
-        </div>
+        </section>
 
-        {/* Form Card */}
-        <div className="bg-dark-900/80 backdrop-blur-xl border border-dark-700/50 rounded-2xl shadow-2xl shadow-black/20 p-8">
-          <Outlet />
-        </div>
+        <section className="flex items-center justify-center p-5 sm:p-8">
+          <div className="w-full max-w-md">
+            <div className="mb-8 flex items-center justify-center gap-3 lg:hidden">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-primary-400/30 bg-primary-500/15">
+                <HiOutlineSparkles className="text-xl text-primary-200" />
+              </div>
+              <h1 className="text-2xl font-bold text-dark-50">TaskFlow</h1>
+            </div>
 
-        {/* Footer */}
-        <p className="text-center text-dark-600 text-sm mt-6">
-          © 2024 TaskFlow. Built for productive teams.
-        </p>
+            <div className="rounded-lg border border-dark-800 bg-dark-950 p-6 shadow-xl shadow-black/20 sm:p-8">
+              <Outlet />
+            </div>
+
+            <p className="mt-6 text-center text-sm text-dark-600">
+              TaskFlow keeps project ownership, status, and deadlines in one place.
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   );

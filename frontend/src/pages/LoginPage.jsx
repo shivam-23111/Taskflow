@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/useAuth';
 import toast from 'react-hot-toast';
-import { IoMailOutline, IoLockClosedOutline, IoEyeOutline, IoEyeOffOutline } from 'react-icons/io5';
+import { IoEyeOffOutline, IoEyeOutline, IoLockClosedOutline, IoMailOutline } from 'react-icons/io5';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -32,14 +32,14 @@ const LoginPage = () => {
 
   return (
     <>
-      <div className="text-center mb-6">
+      <div className="mb-6 text-center">
         <h2 className="text-2xl font-bold text-dark-50">Welcome back</h2>
-        <p className="text-dark-400 mt-1">Sign in to your account</p>
+        <p className="mt-1 text-dark-400">Sign in to your TaskFlow workspace</p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-5">
         <div>
-          <label className="block text-sm font-medium text-dark-300 mb-1.5">
+          <label className="mb-1.5 block text-sm font-medium text-dark-300">
             Email
           </label>
           <div className="relative">
@@ -50,13 +50,13 @@ const LoginPage = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@example.com"
-              className="w-full pl-10 pr-4 py-2.5 bg-dark-800 border border-dark-700 rounded-xl text-dark-100 placeholder-dark-600 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all"
+              className="w-full rounded-lg border border-dark-700 bg-dark-900 py-2.5 pl-10 pr-4 text-dark-100 placeholder-dark-600 transition-all focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30"
             />
           </div>
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-dark-300 mb-1.5">
+          <label className="mb-1.5 block text-sm font-medium text-dark-300">
             Password
           </label>
           <div className="relative">
@@ -66,13 +66,14 @@ const LoginPage = () => {
               type={showPassword ? 'text' : 'password'}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="••••••••"
-              className="w-full pl-10 pr-10 py-2.5 bg-dark-800 border border-dark-700 rounded-xl text-dark-100 placeholder-dark-600 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all"
+              placeholder="Enter password"
+              className="w-full rounded-lg border border-dark-700 bg-dark-900 py-2.5 pl-10 pr-10 text-dark-100 placeholder-dark-600 transition-all focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30"
             />
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-dark-500 hover:text-dark-300"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-dark-500 transition-colors hover:text-dark-300"
+              aria-label={showPassword ? 'Hide password' : 'Show password'}
             >
               {showPassword ? <IoEyeOffOutline size={18} /> : <IoEyeOutline size={18} />}
             </button>
@@ -83,11 +84,11 @@ const LoginPage = () => {
           id="login-submit"
           type="submit"
           disabled={loading}
-          className="w-full py-2.5 bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-400 text-white font-medium rounded-xl shadow-lg shadow-primary-500/25 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-[1.01] active:scale-[0.99]"
+          className="w-full rounded-lg bg-primary-500 py-2.5 font-semibold text-dark-950 transition-colors duration-200 hover:bg-primary-400 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {loading ? (
             <span className="flex items-center justify-center gap-2">
-              <div className="animate-spin rounded-full h-4 w-4 border-t-2 border-white"></div>
+              <span className="h-4 w-4 animate-spin rounded-full border-t-2 border-dark-950" />
               Signing in...
             </span>
           ) : (
@@ -96,9 +97,9 @@ const LoginPage = () => {
         </button>
       </form>
 
-      <p className="text-center text-dark-500 text-sm mt-6">
+      <p className="mt-6 text-center text-sm text-dark-500">
         Don't have an account?{' '}
-        <Link to="/signup" className="text-primary-400 hover:text-primary-300 font-medium transition-colors">
+        <Link to="/signup" className="font-medium text-primary-400 transition-colors hover:text-primary-300">
           Sign up
         </Link>
       </p>

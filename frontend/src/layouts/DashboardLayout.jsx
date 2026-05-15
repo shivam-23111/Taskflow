@@ -20,16 +20,16 @@ const DashboardLayout = () => {
   };
 
   return (
-    <div className="min-h-screen bg-dark-950">
+    <div className="min-h-screen bg-dark-950 text-dark-100">
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
-      <div className="lg:ml-[260px] min-h-screen flex flex-col">
+      <div className="lg:ml-[288px] min-h-screen flex flex-col">
         <Navbar
           onMenuToggle={() => setSidebarOpen(!sidebarOpen)}
           pageTitle={getPageTitle()}
         />
 
-        <main className="flex-1 p-4 lg:p-6">
+        <main className="flex-1 px-4 py-5 sm:px-5 lg:px-8 lg:py-7">
           <Outlet />
         </main>
       </div>

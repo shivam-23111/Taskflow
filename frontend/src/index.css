@@ -1,28 +1,34 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary-50: #eef2ff;
-  --color-primary-100: #e0e7ff;
-  --color-primary-200: #c7d2fe;
-  --color-primary-300: #a5b4fc;
-  --color-primary-400: #818cf8;
-  --color-primary-500: #6366f1;
-  --color-primary-600: #4f46e5;
-  --color-primary-700: #4338ca;
-  --color-primary-800: #3730a3;
-  --color-primary-900: #312e81;
+  --color-primary-50: #e7fff8;
+  --color-primary-100: #c5fbe9;
+  --color-primary-200: #8ef2d3;
+  --color-primary-300: #4de0ba;
+  --color-primary-400: #20c9a4;
+  --color-primary-500: #0da68a;
+  --color-primary-600: #087f6e;
+  --color-primary-700: #09665b;
+  --color-primary-800: #0b524b;
+  --color-primary-900: #0b443f;
+  --color-primary-950: #052a27;
 
-  --color-dark-50: #f8fafc;
-  --color-dark-100: #f1f5f9;
-  --color-dark-200: #e2e8f0;
-  --color-dark-300: #cbd5e1;
-  --color-dark-400: #94a3b8;
-  --color-dark-500: #64748b;
-  --color-dark-600: #475569;
-  --color-dark-700: #334155;
-  --color-dark-800: #1e293b;
-  --color-dark-900: #0f172a;
-  --color-dark-950: #020617;
+  --color-dark-50: #f7faf7;
+  --color-dark-100: #e8eee9;
+  --color-dark-200: #d2ddd5;
+  --color-dark-300: #aebdb3;
+  --color-dark-400: #83928a;
+  --color-dark-500: #617068;
+  --color-dark-600: #46534d;
+  --color-dark-700: #303c36;
+  --color-dark-800: #1b2420;
+  --color-dark-900: #111713;
+  --color-dark-950: #080b09;
+
+  --color-coral-300: #ffae99;
+  --color-coral-400: #ff7c63;
+  --color-coral-500: #ec5946;
+  --color-coral-600: #c94132;
 
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
@@ -36,10 +42,32 @@
 
   body {
     font-family: var(--font-sans);
-    background-color: var(--color-dark-950);
+    background:
+      linear-gradient(135deg, rgba(13, 166, 138, 0.06), transparent 34%),
+      linear-gradient(180deg, var(--color-dark-950), #0c100d 48%, var(--color-dark-950));
     color: var(--color-dark-100);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    letter-spacing: 0;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
+
+  ::selection {
+    background: rgba(13, 166, 138, 0.35);
+    color: var(--color-dark-50);
   }
 
   ::-webkit-scrollbar {
@@ -48,15 +76,15 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: var(--color-dark-900);
+    background: var(--color-dark-950);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: var(--color-dark-600);
+    background: var(--color-dark-700);
     border-radius: 3px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-dark-500);
+    background: var(--color-primary-700);
   }
 }

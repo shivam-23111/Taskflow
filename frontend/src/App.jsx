@@ -42,14 +42,14 @@ function App() {
         toastOptions={{
           duration: 3000,
           style: {
-            background: '#1e293b',
-            color: '#f1f5f9',
-            border: '1px solid #334155',
-            borderRadius: '12px',
+            background: '#111713',
+            color: '#e8eee9',
+            border: '1px solid #303c36',
+            borderRadius: '8px',
             fontSize: '14px',
           },
-          success: { iconTheme: { primary: '#10b981', secondary: '#f1f5f9' } },
-          error: { iconTheme: { primary: '#ef4444', secondary: '#f1f5f9' } },
+          success: { iconTheme: { primary: '#0da68a', secondary: '#e8eee9' } },
+          error: { iconTheme: { primary: '#ec5946', secondary: '#e8eee9' } },
         }}
       />
     </AuthProvider>
